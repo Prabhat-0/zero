@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+@theme {
+
+	/* declaring colors */
+
+	--color-brand-primary:#121212;
+	
+	/*delcaring fonts */
+	--font-display: 'Bebas Neue', 'League Gothic', sans-serif; 
+  	--font-sans: 'Inter', system-ui, sans-serif;  
+
+}
