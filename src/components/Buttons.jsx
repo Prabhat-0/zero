@@ -5,7 +5,6 @@ const Buttons = ({ config }) => {
 
   return (
     <button className='
-      /* FIXED: Added inline-flex and items-center to neatly align text alongside icon */
       inline-flex items-center justify-center gap-2
       px-6 py-2.5 h-auto text-base font-bold tracking-wide uppercase
       bg-transparent text-white border-2 border-white/40 rounded-full
@@ -16,7 +15,7 @@ const Buttons = ({ config }) => {
       hover:scale-105
       hover:shadow-[0_0_15px_rgba(191,219,254,0.6)]
     '>
-      {icon && icon}
+      { icon}
       <span>{text}</span>
     </button>
   );

@@ -1,4 +1,5 @@
 import Hero from "./components/Hero"
+import Footer from "./layouts/Footer"
 import MovieContainer from "./layouts/MovieContainer"
 import NavBar from "./layouts/NavBar"
 
@@ -11,6 +12,7 @@ function App() {
       <NavBar/>
       <Hero/>
       <MovieContainer/>
+      <Footer/>
     </div>
   )
 }

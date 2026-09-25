@@ -9,8 +9,10 @@ const NavBar = () => {
     { value: 'TvShows', path: '#' },
     { value: 'ContactUs', path: '#' }
   ];
-    
-  const [hamburger, setHamburger] = useState(false);
+    const [submit,setSubmit]=useState(null);
+	const [input,setInput]=useState("");
+  	const [hamburger, setHamburger] = useState(false);
+
 
   return (
     
@@ -56,16 +58,18 @@ const NavBar = () => {
         ))}
       </ul>
 
-      <div className='hidden lg:flex relative w-[30%] h-14 px-4 border-2 border-white/20 rounded-full items-center bg-transparent'>
+      <form className='hidden lg:flex relative w-[30%] h-14 px-4 border-2 border-white/20 rounded-full items-center bg-transparent' onSubmit={()=>setSubmit(prev=>!prev)}>
         <input 
           type="text" 
+		  value={input}
+		  onChange={(e)=>{setInput(e.target.value)}}
           placeholder="Search movies..."
           className='w-[85%] font-sans bg-transparent outline-none border-none text-white placeholder-gray-400 text-lg appearance-none'
         />
         <button className='absolute right-4 top-1/2 -translate-y-1/2 outline-none border-none bg-transparent p-0 cursor-pointer text-gray-400 hover:text-white transition-colors'>
           <FaSearch className='w-6 h-6' />
         </button>
-      </div>
+      </form>
 
       
       <div 
