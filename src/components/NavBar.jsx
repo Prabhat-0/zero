@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi'; // 1. Imported FiX for the close button
 import { NavLink } from 'react-router-dom';
@@ -20,8 +20,7 @@ const NavBar = ({searchMovie}) => {
 
 
   return (
-    
-    <nav className='w-full h-20 p-4 bg-transparent text-white flex items-center justify-between lg:justify-around relative z-50'>
+    <nav className='w-full h-20 p-4 bg-transparent  text-white flex items-center justify-between lg:justify-around relative z-50'>
       
       
       <div className='
