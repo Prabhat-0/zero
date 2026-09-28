@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi'; // 1. Imported FiX for the close button
 
-const NavBar = () => {
+const NavBar = ({searchMovie}) => {
   const navLists = [
     { value: 'Home', path: '#' },
     { value: 'Movies', path: '#' },
     { value: 'TvShows', path: '#' },
     { value: 'ContactUs', path: '#' }
   ];
-    const [submit,setSubmit]=useState(null);
-	const [input,setInput]=useState("");
+	  const [input,setInput]=useState("");
   	const [hamburger, setHamburger] = useState(false);
+	const handleSearch = () => {
+	searchMovie(input);
+	setInput("");
+	setHamburger(false); // close mobile drawer after searching
+	};
 
 
   return (
@@ -19,7 +23,7 @@ const NavBar = () => {
     <nav className='w-full h-20 p-4 bg-transparent text-white flex items-center justify-between lg:justify-around relative z-50'>
       
       
-      <span className='
+      <div className='
         text-red-600 font-bold text-3xl p-3 inline-block cursor-pointer
         bg-transparent border-2 border-transparent border-b-transparent
         backdrop-blur-md
@@ -33,7 +37,7 @@ const NavBar = () => {
         hover:text-white
       '>
         ZERO
-      </span>
+      </div>
 
       
       <ul className='hidden lg:flex items-center gap-4 list-none m-0 p-0'>
@@ -58,18 +62,20 @@ const NavBar = () => {
         ))}
       </ul>
 
-      <form className='hidden lg:flex relative w-[30%] h-14 px-4 border-2 border-white/20 rounded-full items-center bg-transparent' onSubmit={()=>setSubmit(prev=>!prev)}>
+      <div className='hidden lg:flex relative w-[30%] h-14 px-4 border-2 border-white/20 rounded-full items-center bg-transparent' >
         <input 
           type="text" 
 		  value={input}
 		  onChange={(e)=>{setInput(e.target.value)}}
-          placeholder="Search movies..."
-          className='w-[85%] font-sans bg-transparent outline-none border-none text-white placeholder-gray-400 text-lg appearance-none'
+      
+        	onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+          placeholder={input===""?"Search movies...":input}
+          className='w-[85%] font-sans bg-transparent outline-none border-none text-white placeholder-gray-400 text-lg appearance-none h-full'
         />
-        <button className='absolute right-4 top-1/2 -translate-y-1/2 outline-none border-none bg-transparent p-0 cursor-pointer text-gray-400 hover:text-white transition-colors'>
+        <button className='absolute right-4 top-1/2 -translate-y-1/2 outline-none border-none bg-transparent p-0 cursor-pointer text-gray-400 hover:text-white transition-colors h-full' onClick={handleSearch}>
           <FaSearch className='w-6 h-6' />
         </button>
-      </form>
+      </div>
 
       
       <div 
@@ -120,10 +126,13 @@ const NavBar = () => {
 			<div className='relative w-[85%] sm:w-[60%] h-12 px-4 border-2 border-white/20 rounded-full flex items-center bg-transparent mt-2 focus-within:border-white/40 transition-colors duration-200'>
 				<input 
 				type="text" 
-				placeholder="Search movies..."
+				placeholder={input===""?"Search movies...":input}
 				className='w-[85%] font-sans bg-transparent outline-none border-none text-white placeholder-gray-500 text-base appearance-none'
+          value={input}
+		  onChange={(e)=>{setInput(e.target.value)}}
+onKeyDown={(e) => e.key === "Enter" && handleSearch()}
 				/>
-				<button className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white bg-transparent border-none p-0 cursor-pointer transition-colors duration-200'>
+				<button className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white bg-transparent border-none p-0 cursor-pointer transition-colors duration-200  ' onClick={handleSearch} >
 				<FaSearch className='w-5 h-5' />
 				</button>
 			</div>

@@ -12,4 +12,6 @@
 	--font-display: 'Bebas Neue', 'League Gothic', sans-serif; 
   	--font-sans: 'Inter', system-ui, sans-serif;  
 
+	/*Delcaring device width*/
+	--breakpoint-xs: 30rem; 
 }

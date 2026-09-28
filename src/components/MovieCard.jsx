@@ -20,14 +20,13 @@ const MovieCard = ({ item }) => {
                     loading="lazy"
                 />
 
-                {/* Gradient always at bottom for subtle title hint even when not hovered */}
+               
                 <div className='absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity duration-300' />
                 <h3 className='absolute bottom-2 left-2 right-2 text-white font-semibold text-sm truncate group-hover:opacity-0 transition-opacity duration-300'>
                     {Title}
                 </h3>
             </div>
 
-            {/* Hover overlay — expands & fades in with full details */}
             <div className='absolute inset-0 rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 
                             transition-all duration-300 ease-out pointer-events-none group-hover:pointer-events-auto
                             bg-linear-to-t from-black via-black/90 to-black/40 flex flex-col justify-end p-4'>
