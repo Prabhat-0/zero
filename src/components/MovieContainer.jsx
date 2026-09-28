@@ -51,9 +51,9 @@ const MovieContainer = ({ searchQuery }) => {
   }
 
   return (
-    <div className="m-0">
+    <div className="mt-0 ml-5 mr-5 mb-2">
       <h3 className="text-white font-sans text-3xl p-4 m-auto">
-        Results for "{searchQuery}"
+       {searchQuery.toLowerCase()==='avengers'? "Newly Added Movies " : `Result for "${searchQuery}"`}
       </h3>
       <div
         id="movies"

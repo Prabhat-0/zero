@@ -1,11 +1,14 @@
 import { useState } from "react";
-import Hero from "./components/Hero";
 import Footer from "./components/Footer";
-import MovieContainer from "./components/MovieContainer";
 import NavBar from "./components/NavBar";
+import ContactUs from "./components/ContactUs";
+import MainRoute from "./routes/mainRoute";
+import { Route, Routes } from "react-router-dom";
+import MovieContainer from "./components/MovieContainer";
+import Hero from "./components/Hero";
 
 function App() {
-  const [searchInput, setSearchInput] = useState("avengers"); // default query
+  const [searchInput, setSearchInput] = useState("avengers"); 
 
   function searchInputSetter(input) {
     const trimmed = input.trim();
@@ -19,8 +22,11 @@ function App() {
   return (
     <div className="m-0 p-0 box-border bg-bg w-full min-h-screen">
 		<NavBar searchMovie={searchInputSetter} />
-		<Hero />
-		<MovieContainer searchQuery={searchInput} />
+      <Routes>
+		 <Route path="/" element={<MainRoute searchQuery={searchInput} />}/>
+        <Route path="/contactUs" element={<ContactUs/>}/>
+      </Routes>
+		
 		<Footer />
     </div>
   );
