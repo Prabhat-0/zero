@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({searchMovie}) => {
   const navLists = [
     { value: 'Home', path: '/' },
-    { value: 'Movies', path: '/' },
+    { value: 'Movies', path: '/movies' },
     { value: 'TvShows', path: '/' },
     { value: 'ContactUs', path: '/contactUs' }
   ];

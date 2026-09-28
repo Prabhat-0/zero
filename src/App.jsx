@@ -25,6 +25,7 @@ function App() {
       <Routes>
 		 <Route path="/" element={<MainRoute searchQuery={searchInput} />}/>
         <Route path="/contactUs" element={<ContactUs/>}/>
+        <Route path="/movies" element={<MovieContainer searchQuery={searchInput}/>}/>
         <Route path="*" element={<p className="text-white p-10 text-4xl">Page not found</p> } />
       </Routes>
 		

@@ -32,13 +32,13 @@ const Footer = () => {
                             never run out of something great to watch.
                         </p>
                         <div className='flex items-center gap-4 mt-5'>
-                            <a href='#' className='hover:text-white transition-colors'>
+                            <a href='https://x.com/' className='hover:text-white transition-colors'>
                                 <FaTwitter className='w-5 h-5' />
                             </a>
-                            <a href='#' className='hover:text-white transition-colors'>
+                            <a href=' https://www.instagram.com/?hl=en' className='hover:text-white transition-colors'>
                                 <FaInstagram className='w-5 h-5' />
                             </a>
-                            <a href='#' className='hover:text-white transition-colors'>
+                            <a href='https://github.com/Prabhat-0/zero' className='hover:text-white transition-colors'>
                                 <FaGithub className='w-5 h-5' />
                             </a>
                         </div>

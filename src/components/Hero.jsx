@@ -8,7 +8,7 @@ const Hero = () => {
             { text: "My List", icon: <FaPlus className="w-4 h-4" /> }
         ];
   return (
-    <main className='w-full h-[50vh] md:h-[70vh] relative z-10 overflow-hidden'>
+    <main className='w-full h-[50vh] md:h-[70vh] lg:h-[80vh] relative z-10 overflow-hidden'>
  
         <div className='w-full h-full absolute inset-0 z-0'>
             <img 
