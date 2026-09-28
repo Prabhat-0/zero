@@ -5,7 +5,7 @@ const MainRoute = ({searchQuery}) => {
   return (
     <>
         <Hero />
-		    <MovieContainer searchQuery={searchQuery} />
+		<MovieContainer searchQuery={searchQuery} />
     </>
   )
 }

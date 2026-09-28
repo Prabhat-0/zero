@@ -2,10 +2,11 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import ContactUs from "./components/ContactUs";
-import MainRoute from "./routes/mainRoute";
+
 import { Route, Routes } from "react-router-dom";
 import MovieContainer from "./components/MovieContainer";
-import Hero from "./components/Hero";
+import MainRoute from "./routes/MainRoute";
+
 
 function App() {
   const [searchInput, setSearchInput] = useState("avengers"); 
