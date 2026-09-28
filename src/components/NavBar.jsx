@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi'; // 1. Imported FiX for the close button
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = ({searchMovie}) => {
   const navLists = [
@@ -44,8 +44,8 @@ const NavBar = ({searchMovie}) => {
       <ul className='hidden lg:flex items-center gap-4 list-none m-0 p-0'>
         {navLists.map((item, index) => (
           <li key={index}>
-            <Link
-              to={item.path} 
+            <NavLink
+              to={item.path} end
               className='
                 text-xl text-gray-300 font-sans no-underline px-4 py-2 
                 inline-flex items-center justify-center cursor-pointer  
@@ -58,7 +58,7 @@ const NavBar = ({searchMovie}) => {
               '
             >
               {item.value}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -106,8 +106,8 @@ const NavBar = ({searchMovie}) => {
 			<ul className='flex flex-col items-center gap-6 list-none m-0 p-0 w-full'>
 				{navLists.map((item, index) => (
 				<li key={index} className="w-full text-center">
-					<Link
-						to={item.path} 
+					<NavLink
+						to={item.path}  end
 						onClick={() => setHamburger(false)} 
 						className='  border-b  active:text-red-500 text-xl text-gray-300 font-sans no-underline px-4 py-2 
 							inline-flex items-center justify-center cursor-pointer  
@@ -116,10 +116,10 @@ const NavBar = ({searchMovie}) => {
 							hover:rounded-2xl hover:border-white/20 hover:border-b-red-300/60
 							hover:translate-x-1 hover:bg-white/5
 							hover:shadow-[0_8px_12px_-3px_rgba(255,255,255,0.2)]
-							hover:text-white'
+							hover:text-white' 
 						>
 						{item.value}
-					</Link>
+					</NavLink>
 				</li>
 				))}
 			</ul>
